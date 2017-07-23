@@ -10,5 +10,21 @@
       "name": "jsone",
       "url": "https://github.com/sile/jsone.git",
       "tag": "v0.3.3"
-    }]
+    },
+    {
+      "name": "lager",
+      "url": "https://github.com/erlang-lager/lager.git",
+      "tag": "3.5.0"
+    }],
+  "install": [
+     {"shell" : "coon release"},
+     {"shell": "id -u example_user &>/dev/null || useradd example_user"},
+     {"shell": "mkdir /var/log/example_service"},
+     {"shell": "chown -R example_user /var/log/example_service"},
+     {"shell": "cp _rel/example_service/lib/example_service-*/priv/example_service.service /etc/systemd/system/"},
+     {"shell": "cp -r ../ /opt/"},
+     {"shell": "chown -R example_user /opt/example_service"},
+     {"shell": "systemctl enable example_service"},
+     {"shell": "systemctl start example_service"}
+  ]
 }

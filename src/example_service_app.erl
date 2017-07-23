@@ -27,7 +27,7 @@ start(_StartType, _StartArgs) ->
   ok = es_handler_mgr:init(),
   case 'example_service_sup':start_link() of
     {ok, Pid} ->
-      io:format("example_service started~n"),
+      es_log:info("example_service started"),
       {ok, Pid};
     Error ->
       Error
