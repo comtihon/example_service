@@ -1,0 +1,9 @@
+{application, 'example_service', [
+  {description, ""},
+  {vsn, "{{ app.vsn }}"},
+  {registered, []},
+  {applications, {{ app.std_apps + app.apps }}},
+  {modules, {{ modules }}},
+  {mod, {'example_service_app', []}},
+  {env, []}
+]}.
