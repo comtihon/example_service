@@ -1,0 +1,13 @@
+[Unit]
+
+[Service]
+Type=simple
+User=example_user
+Group=example_user
+ExecStart=/opt/example_service/_rel/example_service/bin/example_service foreground
+ExecStop=/opt/example_service/_rel/example_service/bin/example_service stop
+ExecReload=/opt/example_service/_rel/example_service/bin/example_service restart
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
