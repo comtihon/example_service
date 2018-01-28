@@ -17,12 +17,11 @@
       "tag": "3.6.0"
     }],
   "install": [
-     {"release": {"erlang": "20"}},
+     {"release": {"rel_dir" : "/opt"}},
      {"shell": "id -u example_user &>/dev/null || useradd example_user"},
      {"shell": "mkdir -p /var/log/example_service"},
      {"shell": "chown -R example_user /var/log/example_service"},
-     {"shell": "cp _rel/example_service/lib/example_service-*/priv/example_service.service /etc/systemd/system/"},
-     {"shell": "cp -r ../ /opt/"},
+     {"shell": "cp /opt/_rel/example_service/lib/example_service-*/priv/example_service.service /etc/systemd/system/"},
      {"shell": "chown -R example_user /opt/example_service"},
      {"shell": "systemctl enable example_service"},
      {"shell": "systemctl start example_service"}
