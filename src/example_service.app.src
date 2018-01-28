@@ -5,5 +5,11 @@
   {applications, {{ app.std_apps + app.apps }}},
   {modules, {{ modules }}},
   {mod, {'example_service_app', []}},
-  {env, []}
+  {env, [
+    {% if MAGIC_GREETING is defined %}
+      {greeting, "{{ MAGIC_GREETING }}"}
+    {% else %}
+      {greeting, "hello world!" }
+    {% endif %}
+  ]}
 ]}.
