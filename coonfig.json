@@ -17,9 +17,9 @@
       "tag": "3.5.0"
     }],
   "install": [
-     {"shell": "coon release"},
+     {"release": {"erlang": "20"}},
      {"shell": "id -u example_user &>/dev/null || useradd example_user"},
-     {"shell": "mkdir /var/log/example_service"},
+     {"shell": "mkdir -p /var/log/example_service"},
      {"shell": "chown -R example_user /var/log/example_service"},
      {"shell": "cp _rel/example_service/lib/example_service-*/priv/example_service.service /etc/systemd/system/"},
      {"shell": "cp -r ../ /opt/"},
