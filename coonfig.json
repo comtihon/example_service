@@ -25,5 +25,11 @@
      {"shell": "chown -R example_user /opt/example_service"},
      {"shell": "systemctl enable example_service"},
      {"shell": "systemctl start example_service"}
+  ],
+  "uninstall": [
+    {"shell" : "systemctl stop example_service"},
+    {"shell" : "systemctl disable example_service"},
+    {"shell" : "rm -rf /opt/_rel"},
+    {"shell" : "userdel example_user"}
   ]
 }
